@@ -8,12 +8,12 @@ export async function editar(e) {
         const btn = el.parentElement;
         const div = btn.parentElement;
         const li = div.firstElementChild;
-
-        console.log(li)
-        const { value: text } = await Swal.fire({
+        console.log(li.innerText)
+        let { value: text } = await Swal.fire({
             input: 'text',
-            html: '<p class="display-6">Digite o novo nome da Tarefa</p>',
+            html: '<p class="display-6">Altere a Tarefa</p>',
             inputPlaceholder: 'Tarefa...',
+            inputValue: li.innerText,
             confirmButtonText: '<i pointer-events: none class="bi bi-check-lg" ></i>',
             confirmButtonColor: '#198754',
             cancelButtonText: '<i pointer-events: none class="bi bi-x-lg"></i>',
